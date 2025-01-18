@@ -13,7 +13,7 @@ const Wrapper = ({
     const [openSidebar, setOpenSidebar] = useState(false)
   return (
     <>
-        <Sidebar open={openSidebar} onClose={()=>setOpenSidebar(!openSidebar)}/>
+        <Sidebar open={openSidebar} onClose={()=>setOpenSidebar(openSidebar)}/>
             <main className={`pl-0 md:pl-[300px] ${enableRightbar ? 
                 "min-[1150px]:pr-[300px]":''}`}>
             <Navbar onMenuClick={()=>setOpenSidebar(!openSidebar)}/>    

@@ -2,6 +2,9 @@ import { CalendarCheck, Home, User, Video, X } from "lucide-react";
 import Logo from "./Logo";
 import { Link, useLocation } from "react-router-dom";
 import generateUniqueId from "generate-unique-id";
+import { Path } from "leaflet";
+import Dashboard from "../Dashboard";
+import DailyUpdate from "../pages/DailyUpdate";
 
 
 interface ISidebar{
@@ -22,10 +25,22 @@ const routes = [
         activePaths:['/dashboard/profile']
     },
     {
+        path: '/dashboard',
+        label: 'Dashboard',
+        icon: Dashboard,
+        activePaths:['/dashboard']
+    },
+    {
         path: '/dashboard/schedule',
         label:'Schedule',
         icon:CalendarCheck,
         activePaths:['/dashboard/schedule']
+    },
+    {
+         path:'/dashboard/dailyupdate',
+         label: "Daily Update",
+         icon:DailyUpdate,
+         activePath:['/dashboard/dailyupdate']
     },
     {
         path: `/dashboard/golive?roomID=${generateUniqueId({length:6})}&role=Host`,
@@ -38,7 +53,7 @@ const routes = [
 const Sidebar = ({open, onClose}:ISidebar) => {
     const {pathname} = useLocation()
   return (
-    <div className={`h-screen fixed bg-bgsecondary w-[300px] 
+    <div className={`h-screen fixed bg-bgsecondary w-[250px] 
     top-0 z-[200] p-4 pr-0 transition-all duration-500 
     left-[-320px] md:left-0 ${open ? 'left-[0px]':''}`}>
         <Logo/>
@@ -46,6 +61,7 @@ const Sidebar = ({open, onClose}:ISidebar) => {
         className='absolute top-4 right-4 size-10 bg-bgprimary text-gray-500 
         flex items-center justify-center rounded-full cursor-pointer 
         hover:text-black transition-all duration-500 md:hidden '>
+            CLOSE
             <X/>
         </div>
        <div className='pt-8'>
@@ -58,7 +74,7 @@ const Sidebar = ({open, onClose}:ISidebar) => {
                 className={`flex items-center gap-1 cursor-pointer px-5 py-3
                     rounded-[51px] rounded-tr-none rounded-br-none text-text
                     text-gray-500 transition-all hover:text-black 
-                    ${route.activePaths.includes(pathname) 
+                    ${route.activePaths?.includes(pathname) 
                     ? 'bg-bgprimary text-primary':'text-gray-500'}`}>{route.label}</Link>
             ))
         }

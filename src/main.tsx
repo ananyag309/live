@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Import your publishable key
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+const PUBLISHABLE_KEY = "pk_test_d29uZHJvdXMtY2hlZXRhaC00OS5jbGVyay5hY2NvdW50cy5kZXYk"
 
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key")
