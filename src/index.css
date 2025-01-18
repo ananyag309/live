@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body,html{
+    height: 100vh;
+    @apply text-black;
+}
+
+.react-datepicker{
+    border-color: #555;
+    color: #111;
+    @apply bg-bgprimary;
+}
+
+.react-datepicker__header{
+    border-bottom-color: #555;
+    @apply bg-bgprimary;
+}
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header{
+    @apply text-black;
+}
+
+.react-datepicker__day,
+.react-datepicker__day-name,
+.react-datepicker__time-name{
+    color: #111;
+}
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__day--in--range,
+.react-datepicker__day--in--selecting-range{
+    @apply bg-primary;
+    @apply text-black;
+}
+
+.react-datepicker__day:hover,
+.react-datepicker__month-text:hover,
+.react-datepicker__quarter-text:hover,
+.react-datepicker__year-text:hover{
+    @apply bg-primary;
+    @apply text-black;
+}
+
+/* Time selector Dark Theme */
+.react-datepicker__time-container{
+    border-left-color: #555;
+    @apply bg-bgprimary;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box{
+    width: 100%;
+    @apply bg-bgprimary;
+}
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul
+.react-datepicker__time-list li.react-datepicker__time-list-item{
+    color: #111;
+    @apply bg-bgprimary;
+}
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul
+.react-datepicker__time-list li.react-datepicker__time-list-item--selected{
+    @apply bg-primary;
+    @apply text-black;
+}
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul
+.react-datepicker__time-list li.react-datepicker__time-list-item:hover{
+    @apply bg-primary;
+    @apply text-black;
+}
+
+[data-theme="dark"] {
+    --color-text:#FFFFFF;
+    --gray-border:1px solid rgba(89, 88, 88, 0.633);
+    --color-background-primary: #0A0A0C;
+    --color-background-secondary: #171719;
+    --color-background-variant: #1b1b1e;
+    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4) 0%, rgba(0, 0, 0,0.5));
+} 
