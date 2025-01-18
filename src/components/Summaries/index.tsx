@@ -223,14 +223,14 @@ const Summaries = () => {
                 </div>
                 <small></small>
             </div>
-            <small className='ratio'
+            {/* <small className='ratio'
             style={{
                 background: lightSuccessColor,
                 color: 'var(--color-success)',
             }}
             >
-                25% <MdOutlineArrowDropUp/>
-            </small>
+                <MdOutlineArrowDropUp/>
+            </small> */}
             <div className="row">
                 <div className="details">
                     <p className="text__muted">Water Intake</p>
@@ -261,14 +261,14 @@ const Summaries = () => {
                 </div>
                 <small></small>
             </div>
-            <small className='ratio'
+            {/* <small className='ratio'
             style={{
                 background: lightDangerColor,
                 color: 'var(--color-danger)',
             }}
             >
-                1.9% <MdOutlineArrowDropDown/>
-            </small>
+                <MdOutlineArrowDropDown/>
+            </small> */}
             <div className="row">
                 <div className="details">
                     <p className="text__muted">Physical Activity</p>
@@ -299,14 +299,14 @@ const Summaries = () => {
                 </div>
                 <small></small>
             </div>
-            <small className='ratio'
+            {/* <small className='ratio'
             style={{
                 background: lightPrimaryColor,
                 color: 'var(--color-primary)',
             }}
             >
-                +25% <MdOutlineArrowDropUp/>
-            </small>
+                <MdOutlineArrowDropUp/>
+            </small> */}
             <div className="row">
                 <div className="details">
                     <p className="text__muted">Sleep Tracker</p>
@@ -337,14 +337,14 @@ const Summaries = () => {
                 </div>
                 <small></small>
             </div>
-            <small className='ratio'
+            {/* <small className='ratio'
             style={{
                 background: lightPrimaryColor,
                 color: 'var(--color-primary)',
             }}
             >
-                +25% <MdOutlineArrowDropUp/>
-            </small>
+                <MdOutlineArrowDropUp/>
+            </small> */}
             <div className="row">
                 <div className="details">
                     <p className="text__muted">MindLog</p>
