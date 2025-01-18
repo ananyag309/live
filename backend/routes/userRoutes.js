@@ -1,5 +1,5 @@
 const express = require('express');
-const { createUser, getUserByEmail, updateDailyData } = require('../controllers/userController');
+const { createUser, getUserByEmail, updateDailyData, updatePSSScore } = require('../controllers/userController');
 
 const router = express.Router();
 
@@ -9,5 +9,7 @@ router.post('/user/create', createUser);
 router.post('/user/:email/daily-update',updateDailyData);
 // Route to get user by email
 router.get('/user/:email', getUserByEmail);
+// Route to update PSS score
+router.post('/user/:email/pss', updatePSSScore);
 
 module.exports = router;

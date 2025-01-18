@@ -49,6 +49,12 @@ const routes = [
         target:'_blank',
         activePaths:[`/dashboard/golive?roomID=${generateUniqueId({length:6})}&role=Host`]
     },
+    {
+        path: `/dashboard/pss`,
+        label:'PSS Calculator',
+        icon:Video,
+        activePaths:[`/dashboard/pss`]
+    },
 ]
 const Sidebar = ({open, onClose}:ISidebar) => {
     const {pathname} = useLocation()

@@ -157,56 +157,7 @@ const Summaries = () => {
     }
   };
 
-  const revenue = {
-    series: [{
-      name: 'PSS',
-      data: data?.pssScore || [100,100]
-    }],
-    options: {
-      ...baseOptions,
-      chart: { ...baseOptions.chart, id: 'revenue', sparkline: { enabled: false } },
-      title: {
-        text: 'Progress Tracker',
-        align: 'left',
-        style: {
-          fontSize:  '20px',
-          fontWeight:  '600',
-          color:  'var(--color-text)',
-        },
-      },
-      grid:{
-        show: false,
-      },
-      dataLabels: {
-          enabled: true,
-      },
-      colors:['var(--color-primary)'],
-      fill: {
-        type: "gradient",
-        gradient: {
-          type: "vertical",
-          opacityFrom: 1,
-          opacityTo: 0,
-          stops: [0, 100],
-          colorStops: [
-            { offset: 0, opacity:1, color: "var(--color-primary)" },
-            { offset: 40, opacity: 0.7, color: "var(--color-primary)" },
-            { offset: 100, opacity: 0, color: "transparent" }
-          ]
-        }
-      },
-      xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-      },
-      yaxis: {
-        labels: {
-          formatter: function (value) {
-            return + value;
-          }
-        },
-      },
-    },
-  };
+
 
   return ({data} &&
     <div className='summaries'>

@@ -24,9 +24,9 @@ function Dashboard() {
         </div>
 
 
-        <div className="components_row-3">
+        {/* <div className="components_row-3">
           <PSS/>        
-      </div>
+      </div> */}
 
 
       </DashboardWrapper>

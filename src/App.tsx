@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute"
 import Dashboard from './Dashboard';
 import Profile from "./pages/Profile"
 import DailyUpdate from "./pages/DailyUpdate"
+import PSS_Check from "./components/PSS"
 function App() {
   
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/sign-up" element={<SignupPage/>}/>
       <Route path="*" element={<h1>Page Not Found</h1>}/>
       <Route path="/dashboard" element={<PrivateRoute/>}>
+      <Route path="pss" element={<PSS_Check />} />
       <Route path="dailyupdate" element={<DailyUpdate />} />
       <Route path="" element={<Dashboard />} />
       <Route path="profile" element={<ProfilePage/>}/>

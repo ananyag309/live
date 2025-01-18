@@ -67,8 +67,28 @@ const updateDailyData = async (req, res) => {
     }
 };
 
+const updatePSSScore = async (req, res) => {
+    try {
+        const { email } = req.params;
+        const { score } = req.body;
+        
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        user.pssScore.push({ value: score, date: new Date() });
+        await user.save();
+        
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};
+
 module.exports = {
     createUser,
     getUserByEmail,
-    updateDailyData
+    updateDailyData,
+    updatePSSScore
 };

@@ -1,6 +1,7 @@
 // PSS_Check.jsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './PSS.css';
+import { useUser } from '@clerk/clerk-react';
 
 const PSS_Check = () => {
   const [answers, setAnswers] = useState({});
@@ -122,12 +123,27 @@ const PSS_Check = () => {
     });
     return total;
   };
-
-  const handleSubmit = () => {
+const {user}=useUser();
+  const handleSubmit = async () => {
     if (Object.keys(answers).length === questions.length) {
       setSubmitted(true);
+      const score = calculatePSSScore();
+      
+      try {
+        await fetch(`http://localhost:3000/user/${user?.primaryEmailAddress?.emailAddress}/pss`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            score: score
+          })
+        });
+      } catch (error) {
+        console.error('Error sending PSS score:', error);
+      }
     }
-  };
+};
 
   const StressGauge = ({ score }) => {
     return (
