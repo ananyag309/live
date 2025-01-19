@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { profile1 } from '../../assets/images'
 import { IoIosNotifications } from 'react-icons/io'
 import { IoSearch } from 'react-icons/io5'
@@ -6,8 +6,8 @@ import { TiThMenu } from 'react-icons/ti'
 import "./DashboardWrapper.css"
 import  Sidebar  from '../Sidebar'
 import UserMenus from './UserMenus'
-import ThemeToggle from '../ThemeToggle'
 import { useUser } from '@clerk/clerk-react'
+// import PaymentButton from '../PaymentButton'
 
 interface DashboardWrapperProps {
   children: React.ReactNode;
@@ -22,7 +22,9 @@ const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
     const [showUserMenus, setShowUserMenus] = useState(false);
     const { user } = useUser();
     const [userData, setUserData] = useState(null);
-    
+    const [showNotifications, setShowNotifications] = useState(false);
+    const notificationRef = useRef(null);
+
     const email = user?.primaryEmailAddress?.emailAddress;
     useEffect(() => {
         const fetchUserData = async () => {
@@ -37,6 +39,20 @@ const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
 
         fetchUserData();
     }, []);
+
+    const notifications = [
+        {
+            id: 1,
+            message: "Time for a water break! Stay hydrated for better mental clarity.",
+            time: "Just now"
+        },
+        {
+            id: 2,
+            message: "Remember to get 8 hours of sleep tonight for better mental health.",
+            time: "2 hours ago"
+        }
+    ];
+
     return (
       <section className='dashboard__wrapper'>
         <Sidebar 
@@ -60,13 +76,24 @@ const DashboardWrapper: React.FC<DashboardWrapperProps> = ({
                         <IoSearch/>
                         <input type="text" placeholder="Search items..." />
                     </div>
-
-{/* Theme changer */}
-                    {/* <ThemeToggle/> */}
-
-
-                    <div className="icon__container hover__fill">
-                        <IoIosNotifications/>
+                    <div className="right">
+                        {/* <PaymentButton /> */}
+                        <div ref={notificationRef} className="icon__container">
+                            <IoIosNotifications onClick={() => setShowNotifications(!showNotifications)}/>
+                            {showNotifications && (
+                                <div className="simple-notification-dropdown">
+                                    <div className="simple-notification-header">
+                                        Notifications
+                                    </div>
+                                    {notifications.map((notification) => (
+                                        <div key={notification.id} className="simple-notification-item">
+                                            <p>{notification.message}</p>
+                                            <span>{notification.time}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                     </div>
                     <div className="icon__container menu__btn" onClick={()=>setShowSidebar(!showSidebar)}>
                         <TiThMenu />

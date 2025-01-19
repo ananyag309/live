@@ -57,7 +57,7 @@ const routes = [
     },
     {
         path: `/dashboard/chat`,
-        label:'Chat Bot',
+        label:'CopeMate',
         icon:Video,
         activePaths:[`/dashboard/chat`]
     },

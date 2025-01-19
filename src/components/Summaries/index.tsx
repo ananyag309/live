@@ -9,7 +9,11 @@ import chroma from 'chroma-js'
 import { PiChartLineDownBold } from 'react-icons/pi'
 import { HiShoppingCart } from 'react-icons/hi'
 import { FaUsers } from 'react-icons/fa'
-import { useUser } from '@clerk/clerk-react';
+import { useUser } from '@clerk/clerk-react'
+import { LuGlassWater } from "react-icons/lu"
+import { FaRunning } from "react-icons/fa"
+import { FaBrain } from "react-icons/fa"
+import { MdAlarm } from "react-icons/md";
 
 const Summaries = () => {
     const lightPrimaryColor = chroma("blue").alpha(0.1).css();
@@ -168,7 +172,7 @@ const Summaries = () => {
                     background: lightSuccessColor,
                     color: 'var(--color-success)',
                 }}>
-                    <FaBagShopping/>
+                    <LuGlassWater/>
                 </div>
                 <small></small>
             </div>
@@ -206,7 +210,7 @@ const Summaries = () => {
                     background: lightDangerColor,
                     color: 'var(--color-danger)',
                 }}>
-                    <PiChartLineDownBold/>
+                    <FaRunning/>
                 </div>
                 <small></small>
             </div>
@@ -244,7 +248,7 @@ const Summaries = () => {
                     background: lightPrimaryColor,
                     color: 'var(--color-primary)',
                 }}>
-                    <HiShoppingCart/>
+                    <FaBrain/>
                 </div>
                 <small></small>
             </div>
@@ -282,7 +286,7 @@ const Summaries = () => {
                     background: lightPrimaryColor,
                     color: 'var(--color-primary)',
                 }}>
-                    <FaUsers/>
+                    <MdAlarm/>
                 </div>
                 <small></small>
             </div>

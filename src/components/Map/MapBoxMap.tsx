@@ -6,13 +6,13 @@ import L from 'leaflet'
 
 // Custom marker icons for better visibility
 const userIcon = L.icon({
-  iconUrl: '/user-location.png', // Add this icon to your public folder
+  iconUrl: 'src/assets/user-location.png', // Add this icon to your public folder
   iconSize: [32, 32],
   iconAnchor: [16, 32],
 });
 
 const doctorIcon = L.icon({
-  iconUrl: '/doctor-location.png', // Add this icon to your public folder
+  iconUrl: 'src/assets/doctor-location.png', // Add this icon to your public folder
   iconSize: [32, 32],
   iconAnchor: [16, 32],
 });
@@ -38,7 +38,14 @@ export default function Maps() {
       specialty: "Psychologist",
       rating: 4.5,
       distance: "0.8km"
-    }
+    },
+    {
+      name: "Dr Paramjeet Singh",
+      position: [28.638145, 77.187488],
+      specialty: "Psychiatrist",
+      rating: 4.7,
+      distance: "58.4 km"
+    },
     // Add more doctors as needed
   ]);
 
