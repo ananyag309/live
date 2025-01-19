@@ -55,6 +55,12 @@ const routes = [
         icon:Video,
         activePaths:[`/dashboard/pss`]
     },
+    {
+        path: `/dashboard/chat`,
+        label:'Chat Bot',
+        icon:Video,
+        activePaths:[`/dashboard/chat`]
+    },
 ]
 const Sidebar = ({open, onClose}:ISidebar) => {
     const {pathname} = useLocation()

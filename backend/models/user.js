@@ -13,6 +13,12 @@ const userSchema = new Schema({
         required: true,
         unique: true
     },
+    age:{
+        type: Number,
+    },
+    gender:{
+        type: String,
+    },
     firstName: {
         type: String,
         required: true

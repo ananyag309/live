@@ -19,8 +19,11 @@ app.get('/', (req, res) => {
     }
 );
 
-//use Routes
+//user Routes
 app.use('/', require('./routes/userRoutes'));
+
+//chat Routes
+app.use('/', require('./routes/chatRoutes'));
 
 //Start the server
 app.listen(3000, () => {

@@ -40,7 +40,7 @@ const Profile = () => {
             });
 
             if (response.ok) {
-                navigate('/');
+                alert('Profile saved successfully!');
             }
         } catch (error) {
             console.error('Error saving profile:', error);

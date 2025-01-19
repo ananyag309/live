@@ -46,7 +46,7 @@ const Summaries = () => {
         if (!array || array.length === 0) return [0];
         return array.map(item => item.value);
     };
-
+    // console.log(formatChartData(data?.waterIntake || []));
   const baseOptions = {
     chart: {
       type: 'area',
@@ -59,7 +59,7 @@ const Summaries = () => {
   const salesChart = {
     series: [{
       name: 'Water Intake',
-      data: formatChartData(data?.waterIntake || [])
+      data: formatChartData(data?.waterIntake)
     }],
     type: 'area',
     options: {
@@ -157,8 +157,6 @@ const Summaries = () => {
     }
   };
 
-
-
   return ({data} &&
     <div className='summaries'>
         {/* Start summary */}
@@ -188,12 +186,12 @@ const Summaries = () => {
                     <h1>{getLatestValue(data?.waterIntake)} Liters</h1>
                 </div>
                 <div className="chart">
-                   {salesChart.data && <Chart
+                    <Chart
                     {...salesChart}
                     width={'100%'}
                     height={60}
                     type='area'
-                    />}
+                    />
                 </div>
             </div>
         </div>

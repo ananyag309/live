@@ -5,6 +5,7 @@ import Revenue from "./components/Revenue"
 import BestCrops from "./components/BestCrops"
 import Farmers from "./components/Farmers"
 import PSS from "./components/PSS"
+import ChatBot from "./components/ChatBot"
 // import { Route, Routes } from 'react-router-dom'
 
 function Dashboard() {
@@ -21,6 +22,7 @@ function Dashboard() {
         <div className="components__row r-2">
         <BestCrops/>
         <Farmers/>
+        {/* <ChatBot /> */}
         </div>
 
 

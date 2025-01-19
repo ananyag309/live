@@ -2,7 +2,7 @@ const User = require('../models/user');
 
 const createUser = async (req, res) => {
     try {
-        const { clerkId, email } = req.body;
+        const { clerkId, email,age,gender } = req.body;
         
         // Check if user exists
         let user = await User.findOne({ email });
@@ -11,7 +11,11 @@ const createUser = async (req, res) => {
             // Update existing user
             user = await User.findOneAndUpdate(
                 { email },
-                req.body,
+                { 
+                    ...req.body,
+                    age,
+                    gender
+                },
                 { new: true }
             );
         } else {
