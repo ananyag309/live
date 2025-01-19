@@ -1,4 +1,3 @@
-
 import Wrapper from '../components/Wrapper'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -9,6 +8,7 @@ import { SignedOut } from '@clerk/clerk-react';
 import { Link } from 'react-router-dom';
 import { Eye } from 'lucide-react';
 import MapBoxMap from '../components/Map/MapBoxMap.tsx';
+import { useEffect } from 'react';
 
 // const InputField = ({label, placeholder, type}) => {
 //   return (
@@ -24,6 +24,31 @@ import MapBoxMap from '../components/Map/MapBoxMap.tsx';
 // };
 
 const HomePage = () => {
+  useEffect(() => {
+    // Create script elements
+    const gtranslateSettings = document.createElement('script');
+    gtranslateSettings.innerHTML = `
+      window.gtranslateSettings = {
+        "default_language": "en",
+        "detect_browser_language": true,
+        "wrapper_selector": ".gtranslate_wrapper",
+        "flag_size": 16
+      };
+    `;
+    document.body.appendChild(gtranslateSettings);
+
+    const gtranslateScript = document.createElement('script');
+    gtranslateScript.src = "https://cdn.gtranslate.net/widgets/latest/popup.js";
+    gtranslateScript.defer = true;
+    document.body.appendChild(gtranslateScript);
+
+    // Cleanup function to remove scripts on unmount
+    return () => {
+      document.body.removeChild(gtranslateSettings);
+      document.body.removeChild(gtranslateScript);
+    };
+  }, []);
+
   return (
     <Wrapper enableRightbar>
       <div className='w-full overflow-hidden rounded-md'>
@@ -168,6 +193,9 @@ const HomePage = () => {
 
   </div>
 </div>
+
+      {/* Language Translator */}
+      <div className="gtranslate_wrapper"></div>
     </Wrapper>
   )
 }
