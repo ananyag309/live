@@ -3,13 +3,7 @@
 <br>
 
 ``` "Soul Sync is an AI-powered mental wellness platform that uses stress assessment, personalized coping strategies, and emotional interaction to support users in real time." ```
-
----
-
-## 👥 Team Members
-
-- [Charvi Singh](https://github.com/4V-Lagging-24by7)  
-- [Ananya Gupta](https://github.com/ananyag309)  
+ 
 
 ---
 
