@@ -1,5 +1,5 @@
 # Soul Sync 
-### Built with 💙 by Team Two Threads
+### Built with 💙 by Team Shanti Space
 <br>
 
 ``` "Soul Sync is an AI-powered mental wellness platform that uses stress assessment, personalized coping strategies, and emotional interaction to support users in real time." ```
